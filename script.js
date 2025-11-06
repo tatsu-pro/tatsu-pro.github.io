@@ -271,7 +271,7 @@ function initLoadingScreen() {
         'リソースを準備中...',
         'コンテンツを構築中...',
         '最終調整中...',
-        '完了しました！'
+        'ようこそ、たつプロページへ'
     ];
 
     const progressInterval = setInterval(() => {
