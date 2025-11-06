@@ -1,6 +1,5 @@
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, initializing functions...');
     // Initialize all functions
     initNavigation();
     initScrollAnimations();
@@ -96,13 +95,10 @@ function initScrollAnimations() {
 function initTypingEffect() {
     const typingText = document.querySelector('.typing-text');
     if (!typingText) {
-        console.log('Typing text element not found');
         // Try again after a delay
         setTimeout(initTypingEffect, 500);
         return;
     }
-
-    console.log('Found typing text element:', typingText);
     
     const texts = [
         'こんにちは、たつプロです。',
@@ -147,7 +143,6 @@ function initTypingEffect() {
     }
 
     // Start typing effect immediately
-    console.log('Starting typing effect with texts:', texts);
     typeEffect();
 }
 
@@ -214,10 +209,7 @@ function initContactForm() {
     const ctaButton = document.querySelector('.contact-cta .btn');
     
     if (ctaButton) {
-        ctaButton.addEventListener('click', function(e) {
-            // Track click event (you can add analytics here)
-            console.log('CrowdWorks CTA clicked');
-            
+        ctaButton.addEventListener('click', function(e) {            
             // Add a small animation feedback
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
@@ -249,22 +241,80 @@ function initParallaxEffect() {
     });
 }
 
-// Loading screen
+// Loading screen with progress
 function initLoadingScreen() {
-    // Create loading screen
+    // Create loading screen with progress
     const loadingScreen = document.createElement('div');
     loadingScreen.className = 'loading';
-    loadingScreen.innerHTML = '<div class="loader"></div>';
+    loadingScreen.innerHTML = `
+        <div class="loading-content">
+            <div class="loader"></div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">0%</div>
+            </div>
+            <div class="loading-message">読み込み中...</div>
+        </div>
+    `;
     document.body.appendChild(loadingScreen);
+
+    // Progress simulation
+    let progress = 0;
+    const progressFill = loadingScreen.querySelector('.progress-fill');
+    const progressText = loadingScreen.querySelector('.progress-text');
+    const loadingMessage = loadingScreen.querySelector('.loading-message');
+
+    const messages = [
+        '読み込み中...',
+        'リソースを準備中...',
+        'コンテンツを構築中...',
+        '最終調整中...',
+        '完了しました！'
+    ];
+
+    const progressInterval = setInterval(() => {
+        progress += Math.random() * 15 + 5; // 5-20%ずつ増加
+        
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(progressInterval);
+        }
+
+        progressFill.style.width = progress + '%';
+        progressText.textContent = Math.floor(progress) + '%';
+
+        // メッセージを進捗に応じて変更
+        if (progress < 25) {
+            loadingMessage.textContent = messages[0];
+        } else if (progress < 50) {
+            loadingMessage.textContent = messages[1];
+        } else if (progress < 75) {
+            loadingMessage.textContent = messages[2];
+        } else if (progress < 100) {
+            loadingMessage.textContent = messages[3];
+        } else {
+            loadingMessage.textContent = messages[4];
+        }
+    }, 200);
 
     // Hide loading screen after page load
     window.addEventListener('load', function() {
+        // 実際のページ読み込み完了時に100%にする
         setTimeout(() => {
-            loadingScreen.classList.add('hidden');
+            progress = 100;
+            progressFill.style.width = '100%';
+            progressText.textContent = '100%';
+            loadingMessage.textContent = messages[4];
+            
             setTimeout(() => {
-                loadingScreen.remove();
-            }, 500);
-        }, 1000);
+                loadingScreen.classList.add('hidden');
+                setTimeout(() => {
+                    loadingScreen.remove();
+                }, 500);
+            }, 800);
+        }, 500);
     });
 }
 
@@ -329,10 +379,3 @@ window.addEventListener('scroll', debouncedScroll);
 window.addEventListener('error', function(e) {
     console.error('JavaScript error:', e.error);
 });
-
-// Console welcome message
-console.log(`
-🚀 たつプロ Portfolio Website Loaded Successfully!
-📧 Contact: tatsu.pro@example.com
-🌐 ITコンサルタント・エンジニア
-`);
