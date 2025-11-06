@@ -1,96 +1,300 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Webデザインとコーディングを専門とするポートフォリオサイトです。見やすく、伝わるデザインを提供します。"
-    />
-    <title>Portfolio | たつプロ</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>たつプロ - エンジニア・ITコンサルタント</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
     <nav class="navbar">
-      <div class="nav-container">
-        <a href="#" class="logo">たつプロ</a>
-        <ul class="nav-links">
-          <li><a href="#about">プロフィール</a></li>
-          <li><a href="#skills">スキル</a></li>
-          <li><a href="#works">制作実績</a></li>
-          <li><a href="#contact">お問い合わせ</a></li>
-        </ul>
-      </div>
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <a href="#home">
+                    <img src="logo.jpeg" alt="たつプロ" class="logo-image">
+                    <span class="logo-text">たつプロ</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
 
-    <header class="hero">
-      <div class="hero-content">
-        <p class="typing-text"></p>
-        <h1>Webデザイン × コーディング</h1>
-        <p>見やすく、伝わるデザインを。</p>
-        <a href="#contact" class="btn">お問い合わせ</a>
-      </div>
-    </header>
-
-    <main>
-      <section id="about">
-        <h2 class="section-title">プロフィール</h2>
-        <p>
-          エンジニアとしての実務経験を活かし、Webサイト制作を行っています。<br />
-          HTML / CSS / JavaScriptを中心に、デザインから実装まで対応可能です。<br />
-          ユーザー体験を第一に考えた、モダンで洗練されたWebサイトを制作します。
-        </p>
-      </section>
-
-      <section id="skills">
-        <h2 class="section-title">スキル</h2>
-        <ul class="skills-list">
-          <li>HTML / CSS / JS</li>
-          <li>レスポンシブ</li>
-          <li>Figma / Photoshop</li>
-          <li>WordPress</li>
-        </ul>
-      </section>
-
-      <section id="works">
-        <h2 class="section-title">制作実績</h2>
-        <div class="works-grid">
-          <div class="work-card">
-            <div class="work-img">☕</div>
-            <p>架空カフェサイト - デザイン＆コーディング</p>
-          </div>
-          <div class="work-card">
-            <div class="work-img">💼</div>
-            <p>架空ポートフォリオLP - レスポンシブ対応</p>
-          </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="typing-text">こんにちは、たつプロです。</span>
+                </h1>
+                <p class="hero-subtitle">エンジニア・ITコンサルタント</p>
+                <p class="hero-description">課題を超えて、理想を創造します</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">サービス内容</a>
+                    <a href="#contact" class="btn btn-secondary">お問い合わせ</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-elements">
+                    <div class="floating-element"></div>
+                    <div class="floating-element"></div>
+                    <div class="floating-element"></div>
+                </div>
+            </div>
         </div>
-      </section>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
 
-      <section id="process">
-        <h2 class="section-title">制作の流れ</h2>
-        <ol class="process-list">
-          <li>ヒアリング</li>
-          <li>デザイン提案</li>
-          <li>コーディング</li>
-          <li>納品・修正対応</li>
-        </ol>
-      </section>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p><strong>課題を超えて、理想を創造します。</strong></p>
+                    <p>前職では大手ECプラットフォーム企業にて会計システムの設計・開発・運用を担当し、品質向上や自動化ツールの開発を通じて堅牢で効率的なシステムを実現しました。</p>
+                    <p>また、Webデザインやポートフォリオサイトの制作にも対応しており、「デザイン再現性 × 技術的安定性」を両立したモダンなWeb開発を得意としています。</p>
+                    <p>ビジネス要件の整理からシステム要件への落とし込み、設計・開発・導入までを一貫して行い、 課題の本質を見極めながら最適な仕組みを形にしています。</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="5">0</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="2">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="0">0</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <img src="brand-image.jpeg" alt="たつプロ" class="about-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <section id="contact">
-        <h2 class="section-title">お問い合わせ</h2>
-        <p>クラウドワークスのメッセージよりご連絡ください。</p>
-        <a href="https://crowdworks.jp/" class="btn">クラウドワークスへ</a>
-      </section>
-    </main>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">対応可能な業務</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Webサイト・LP制作</h3>
+                    <p>HTML・CSS・JavaScriptを使用したレスポンシブ対応のWebサイト・ランディングページの制作</p>
+                    <ul>
+                        <li>SEO対応</li>
+                        <li>レスポンシブデザイン</li>
+                        <li>パフォーマンス最適化</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Webアプリケーション開発</h3>
+                    <p>Java・PHP・React・TypeScriptを使用したWebアプリケーションの構築</p>
+                    <ul>
+                        <li>管理画面開発</li>
+                        <li>簡易システム構築</li>
+                        <li>API設計・開発</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Webデザイン</h3>
+                    <p>Figmaデザインデータを正確にコーディング再現</p>
+                    <ul>
+                        <li>ピクセルパーフェクト</li>
+                        <li>クロスブラウザ対応</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>サイト修正・リニューアル</h3>
+                    <p>既存サイトの修正・改善・リニューアル対応</p>
+                    <ul>
+                        <li>パフォーマンス改善</li>
+                        <li>セキュリティ対策</li>
+                        <li>保守性向上</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-      <p>&copy; 2025 たつプロ</p>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">得意分野・制作スタイル</h2>
+            <div class="skills-content">
+                <div class="strengths">
+                    <h3>得意分野</h3>
+                    <div class="strength-items">
+                        <div class="strength-item">
+                            <i class="fas fa-eye"></i>
+                            <div>
+                                <h4>UIデザインの正確な反映</h4>
+                                <p>デザインの意図を理解し、ピクセルパーフェクトなコーディングを実現</p>
+                            </div>
+                        </div>
+                        <div class="strength-item">
+                            <i class="fas fa-code-branch"></i>
+                            <div>
+                                <h4>保守性の高いコード設計</h4>
+                                <p>軽量で読みやすく、再利用性を重視したコード構成</p>
+                            </div>
+                        </div>
+                        <div class="strength-item">
+                            <i class="fas fa-database"></i>
+                            <div>
+                                <h4>データ構造を意識した実装</h4>
+                                <p>画面設計とデータ構造の両面から最適な実装を提案</p>
+                            </div>
+                        </div>
+                        <div class="strength-item">
+                            <i class="fas fa-route"></i>
+                            <div>
+                                <h4>シンプルな動線設計</h4>
+                                <p>ユーザビリティを重視したわかりやすい画面遷移</p>
+                            </div>
+                        </div>
+                        <div class="strength-item">
+                            <i class="fas fa-business-time"></i>
+                            <div>
+                                <h4>業務理解に基づく要件整理</h4>
+                                <p>ビジネス背景を理解した上での適切な要件定義</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-skills">
+                    <h3>技術スキル</h3>
+                    <div class="tech-categories">
+                        <div class="tech-category">
+                            <h4>Frontend</h4>
+                            <div class="tech-items">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>TypeScript</span>
+                                <span>React</span>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <h4>Backend</h4>
+                            <div class="tech-items">
+                                <span>Java</span>
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <h4>Tools & Others</h4>
+                            <div class="tech-items">
+                                <span>Git</span>
+                                <span>Figma</span>
+                                <span>Docker</span>
+                                <span>AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">お問い合わせ</h2>
+            <div class="contact-intro">
+                <p class="contact-message">エンジニアとしての実務経験と、ITコンサルとしての業務設計力の両面から、<br>依頼者様の想いを「確実に形にする」お手伝いをいたします。</p>
+                <p class="contact-message">技術・デザイン・ビジネスをつなぐパートナーとして、ぜひお気軽にご相談ください。</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>制作スタイル</h3>
+                    <div class="style-points">
+                        <div class="style-point">
+                            <i class="fas fa-target"></i>
+                            <div>
+                                <h4>目的重視</h4>
+                                <p>単に「見た目を再現する」だけでなく、依頼者様の目的やビジネス背景を理解した上で、成果につながるWebサイトを制作</p>
+                            </div>
+                        </div>
+                        <div class="style-point">
+                            <i class="fas fa-code"></i>
+                            <div>
+                                <h4>品質重視</h4>
+                                <p>読みやすく再利用性の高い構成を重視し、細部のデザイン調整や動作確認まで丁寧に対応</p>
+                            </div>
+                        </div>
+                        <div class="style-point">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>柔軟対応</h4>
+                                <p>納期を守ることはもちろん、修正や調整にも柔軟に対応</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>土日祝対応可</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>日本全国（リモート対応）</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <p class="cta-description">プロジェクトのご相談・お見積もりは、クラウドワークスのプロフィールページからお気軽にお問い合わせください。</p>
+                    <a href="https://crowdworks.jp/public/employees/6650213?ref=share_url_wkprofile" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
+                        <i class="fas fa-external-link-alt"></i>
+                        クラウドワークスで相談する
+                    </a>
+                    <p class="cta-note">※ 新しいタブでクラウドワークスが開きます</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 たつプロ. All rights reserved.</p>
+        </div>
     </footer>
-    <script src="script.js"></script>
-  </body>
+
+    <script src="js/script.js"></script>
+</body>
 </html>
