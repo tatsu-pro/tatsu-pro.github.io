@@ -1055,6 +1055,8 @@ html {
     line-height: var(--line-height-base);
     color: var(--text-secondary);
     margin-bottom: var(--spacing-sm);
+    text-align: center;
+    text-align-last: left;
 }
 
 .style-points {
@@ -1126,6 +1128,8 @@ html {
     line-height: var(--line-height-base);
     color: var(--text-secondary);
     margin-bottom: var(--spacing-lg);
+    text-align: center;
+    text-align-last: left;
 }
 
 .btn-large {
