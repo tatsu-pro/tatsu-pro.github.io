@@ -1055,8 +1055,10 @@ html {
     line-height: var(--line-height-base);
     color: var(--text-secondary);
     margin-bottom: var(--spacing-sm);
-    text-align: center;
-    text-align-last: left;
+    text-align: left;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .style-points {
